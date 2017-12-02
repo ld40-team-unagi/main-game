@@ -1,0 +1,5 @@
+- [ ] prefabの名前: Something
+- [ ] 保存場所:     Assets/Scenes/MainGame/
+- [ ] サイズ:       1, 1, 1
+- [ ] 原点:         0, 0, 0
+- [ ] Componentの指定
