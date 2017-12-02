@@ -15,6 +15,8 @@ public class Player : MonoBehaviour {
 	public float camAngleY = 0f;
 	public float camDistance = 5f;
 	public float camHight = 5f;
+	public GameObject herbePot;
+	public GameObject mushroomPot;
 
 	Vector3 preVelocity;
 
@@ -29,6 +31,15 @@ public class Player : MonoBehaviour {
 			-camDistance*Mathf.Cos(camAngleY));
 		camera.transform.LookAt (transform);
 		camAngleY += 0.002f;
+
+		Vector3 forward = transform.forward;
+		if (Input.GetButtonDown("Fire1")){
+			GameObject obj = (GameObject)Instantiate(herbePot, transform.position + forward, Quaternion.identity);
+
+		}
+		if (Input.GetButtonDown("Fire2")){
+			GameObject obj = (GameObject)Instantiate(mushroomPot, transform.position + forward, Quaternion.identity);
+		}
 	}
 
 	//void FixedUpdate(){
