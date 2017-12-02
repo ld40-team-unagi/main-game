@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 95cadbd5c4177ba4cbb7e3227097710f
+timeCreated: 1512207639
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: JazzText
+  fontNames:
+  - JazzText
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
