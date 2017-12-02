@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: ab2004cf953f3a440a64fa08f4bf8e67
+timeCreated: 1512207652
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: takumi-yutorifont
+  fontNames:
+  - takumi-yutorifont
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
