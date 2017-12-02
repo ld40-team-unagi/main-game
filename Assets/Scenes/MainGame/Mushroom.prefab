@@ -21,7 +21,8 @@ GameObject:
   - component: {fileID: 4947397510685340}
   - component: {fileID: 33948121223899890}
   - component: {fileID: 23025310632069498}
-  m_Layer: 0
+  - component: {fileID: 114815536078617570}
+  m_Layer: 8
   m_Name: Mushroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1035808105161418}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -84,3 +85,16 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1035808105161418}
   m_Mesh: {fileID: 4300000, guid: 7868c8b102997694b9f4e38a982a9cff, type: 3}
+--- !u!114 &114815536078617570
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1035808105161418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 376e3f04c54e449de8a3e07e884b731e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxAge: 1800
+  price: 100
