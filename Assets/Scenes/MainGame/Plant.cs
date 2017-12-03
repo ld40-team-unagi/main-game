@@ -33,8 +33,6 @@ public class Plant: MonoBehaviour{
 
 		float s = ((float)age / (float)maxAge);
 		transform.localScale = new Vector3 (s, s, s);
-
-
 	}
 
 	public int CurrentAge(){
@@ -92,5 +90,15 @@ public class Plant: MonoBehaviour{
 		}
 
 		return (a * Mathf.Pow(2, -10 * value) * Mathf.Sin((value * d - s) * (2 * Mathf.PI) / p) + end + start);
+	}
+
+	void DestroyPlant(int plantlife){
+		if (transform.up.y < Mathf.Cos(angle)) {
+			maxLife -= 1;
+
+			if(maxLife <= 0){
+				Destroy (gameObject);
+			}
+		}
 	}
 }
