@@ -5,6 +5,7 @@ using UnityEngine;
 public class Plant: MonoBehaviour{
 	public int maxAge = 1800;
 	public int price  = 100;
+	public int maxLife = 1000;
 
 	public void Update(){
 		
@@ -15,6 +16,8 @@ public class Plant: MonoBehaviour{
 		age += 1;
 		float s = ((float)age / (float)maxAge);
 		transform.localScale = new Vector3 (s, s, s);
+
+		DestroyPlant (maxLife);
 	}
 
 	public int CurrentAge(){
@@ -27,6 +30,7 @@ public class Plant: MonoBehaviour{
 		
 	int age = 0;
 	float animationTimer = 0;
+	float angle = 45;
 
 	void Animate(){
 		transform.eulerAngles = transform.eulerAngles + new Vector3 (0f, 0.8f, 0f);
@@ -60,5 +64,15 @@ public class Plant: MonoBehaviour{
 		}
 
 		return (a * Mathf.Pow(2, -10 * value) * Mathf.Sin((value * d - s) * (2 * Mathf.PI) / p) + end + start);
+	}
+
+	void DestroyPlant(int plantlife){
+		if (transform.up.y < Mathf.Cos(angle)) {
+			maxLife -= 1;
+
+			if(maxLife <= 0){
+				Destroy (gameObject);
+			}
+		}
 	}
 }
