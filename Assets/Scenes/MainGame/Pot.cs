@@ -12,9 +12,9 @@ public class Pot : MonoBehaviour {
 
 		//Vector2 pos = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
 		// プレハブからインスタンスを生成
-		GameObject obj = (GameObject)Instantiate(plant, transform.position + new Vector3(0f,0.4f,0f), Quaternion.identity);
+		plant = (GameObject)Instantiate(plant, transform.position + new Vector3(0f,0.4f,0f), Quaternion.identity);
 		// 作成したオブジェクトを子として登録
-		obj.transform.parent = transform;
+		plant.transform.parent = transform;
 	}
 	
 	// Update is called once per frame
