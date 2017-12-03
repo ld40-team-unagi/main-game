@@ -5,6 +5,9 @@ using UnityEngine;
 public class Pot : MonoBehaviour {
 	public GameObject plant;
 	public Plant plantScript;
+
+
+
 	// Use this for initialization
 	void Start () {
 		//Instantiate (plant, transform.position + new Vector3(0f,0.5f,0f), transform.rotation);
@@ -25,16 +28,17 @@ public class Pot : MonoBehaviour {
 			deadAnimate();
 		}
 	}
+
+	float deadAnimationTimer;
+
+	//
 	void deadAnimate(){
-		int age = plantScript.CurrentAge();
-		int deleteTime = plantScript.deadAge;
-		float scale = age - deleteTime;
-		scale /= 30f;
-		scale = 1f - scale;
-		if(scale <= 0f){
+		if(deadAnimationTimer >= 1f){
 			Destroy(gameObject);
 			return;
 		}
+		deadAnimationTimer += 1f / 30f;
+		float scale = 1f - deadAnimationTimer;
 		transform.localScale = new Vector3(scale, scale, scale);
 	}
 }
