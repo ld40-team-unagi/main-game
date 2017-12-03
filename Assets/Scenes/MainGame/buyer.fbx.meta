@@ -1,0 +1,147 @@
+fileFormatVersion: 2
+guid: f7722cb7d3bc9284c9f62182092e6c3d
+timeCreated: 1512300302
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Circle.004
+    100004: Circle.005
+    100006: Cube.036
+    100008: Cube.037
+    100010: Cube.038
+    100012: Cube.039
+    100014: Cube.040
+    400000: //RootNode
+    400002: Circle.004
+    400004: Circle.005
+    400006: Cube.036
+    400008: Cube.037
+    400010: Cube.038
+    400012: Cube.039
+    400014: Cube.040
+    2300000: Circle.004
+    2300002: Circle.005
+    2300004: Cube.036
+    2300006: Cube.037
+    2300008: Cube.038
+    2300010: Cube.039
+    2300012: Cube.040
+    3300000: Circle.004
+    3300002: Circle.005
+    3300004: Cube.036
+    3300006: Cube.037
+    3300008: Cube.038
+    3300010: Cube.039
+    3300012: Cube.040
+    4300000: Circle.005
+    4300002: Cube.040
+    4300004: Cube.039
+    4300006: Cube.038
+    4300008: Circle.004
+    4300010: Cube.037
+    4300012: Cube.036
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: buywersuit
+    second: {fileID: 2100000, guid: 62ddabcf7e7f61742931e2cfd180c403, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: buywersuit.001
+    second: {fileID: 2100000, guid: bf50650edd70a984faef8bd3c4079bb7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gold
+    second: {fileID: 2100000, guid: a04c6bab2c55f413f84fae1455161412, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: skin
+    second: {fileID: 2100000, guid: c83e55b0842c34af9bebb496764f05e0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sunglass
+    second: {fileID: 2100000, guid: 3130a12e8d7a341b3971b130fcb1375e, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
