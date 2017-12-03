@@ -11,6 +11,7 @@ public class Player : MonoBehaviour {
 	public float camDistance = 5f;
 	public float camHight = 5f;
 	public float mushRand = 0.5f;
+	public bool isDead = false;
 	public GameObject herbePot;
 	public GameObject mushroomPot;
 
