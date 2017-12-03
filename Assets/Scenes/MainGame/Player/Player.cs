@@ -10,6 +10,7 @@ public class Player : MonoBehaviour {
 	public float camAngleY = 0f;
 	public float camDistance = 5f;
 	public float camHight = 5f;
+	public float mushRand = 0.5f;
 	public GameObject herbePot;
 	public GameObject mushroomPot;
 
@@ -63,7 +64,13 @@ public class Player : MonoBehaviour {
 		if (seeds == 0)
 			return;
 		Vector3 forward = transform.forward;
-		herbePot = (GameObject)Instantiate(herbePot, transform.position + forward, Quaternion.identity);
+
+		if(Random.Range(0f, 1f) <= mushRand){
+			mushroomPot = (GameObject)Instantiate(mushroomPot, transform.position + forward, Quaternion.identity);
+		}else{
+			herbePot = (GameObject)Instantiate(herbePot, transform.position + forward, Quaternion.identity);
+		}
+
 		seeds -= 1;
 	}
 
