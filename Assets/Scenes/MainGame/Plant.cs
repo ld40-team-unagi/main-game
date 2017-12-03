@@ -6,14 +6,17 @@ public class Plant: MonoBehaviour{
 	public int maxAge = 1800;
 	public int cropYields  = 100;
 	public int seeds  = 2;
+	public int deadAge = 4000;
 
 	public void Update(){
-		
+		age += 1;
+		if (IsDead()) {
+			return;
+		}
 		if (CanCrop ()) {
 			Animate ();
 			return;
 		}
-		age += 1;
 		float s = ((float)age / (float)maxAge);
 		transform.localScale = new Vector3 (s, s, s);
 	}
@@ -23,9 +26,11 @@ public class Plant: MonoBehaviour{
 	}
 
 	public bool CanCrop(){
-		return age >= maxAge;
+		return age >= maxAge && !IsDead();
 	}
-		
+	public bool IsDead(){
+		return age >= deadAge;
+	}
 	int age = 0;
 	float animationTimer = 0;
 
