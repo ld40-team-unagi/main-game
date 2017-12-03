@@ -66,9 +66,9 @@ public class Player : MonoBehaviour {
 		Vector3 forward = transform.forward;
 
 		if(Random.Range(0f, 1f) <= mushRand){
-			mushroomPot = (GameObject)Instantiate(mushroomPot, transform.position + forward, Quaternion.identity);
+			Instantiate(mushroomPot, transform.position + forward, Quaternion.identity);
 		}else{
-			herbePot = (GameObject)Instantiate(herbePot, transform.position + forward, Quaternion.identity);
+			Instantiate(herbePot, transform.position + forward, Quaternion.identity);
 		}
 
 		seeds -= 1;
