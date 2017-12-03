@@ -19,23 +19,60 @@ public class Player : MonoBehaviour {
 	Vector3 preVelocity;
 	public int cropYields;
 	public int seeds;
+	bool inHouse = false;
 
 	void Start(){
 		rb = this.GetComponent<Rigidbody> ();
 	}
 
 	void Update () {
-		cam.transform.position = transform.position + new Vector3 (
+		if (inHouse) {
+			camAngleY = 0f;
+			cam.transform.position = transform.position + new Vector3 (
+				0f, 
+				camHight*2f, 
+				0f
+			);
+			cam.transform.eulerAngles = new Vector3(90f,0f,0f);
+		} else {
+			camAngleY += 0.002f;
+			cam.transform.position = transform.position + new Vector3 (
 			-camDistance*Mathf.Sin(camAngleY), 
 			camHight, 
 			-camDistance*Mathf.Cos(camAngleY));
-		cam.transform.LookAt (transform);
-		camAngleY += 0.002f;
+			cam.transform.LookAt (transform);
+
+		}
+
 
 		if (Input.GetButtonDown ("Fire1")) {
 			SowSeed ();
 		}
+
 	}
+
+	void OnTriggerStay(Collider c){
+		GameObject target = c.gameObject;
+		if (target.GetComponent<House> () != null) {
+			inHouse = true;
+		}
+	}
+
+
+//	void OnTriggerEnter(Collider c){
+//		GameObject target = c.gameObject;
+//		if (target.GetComponent<House> () != null) {
+//			inHouse = true;
+//		}
+//	}
+//
+//	void OnTriggerExit(Collider c){
+//		GameObject target = c.gameObject;
+//		if (target.GetComponent<House> () != null) {
+//			inHouse = false;
+//		}
+//	}
+
 
 	public void AddCropYields(int n){
 		cropYields += n;
@@ -93,5 +130,8 @@ public class Player : MonoBehaviour {
 			transform.LookAt (transform.position + globalForceVector);
 		}
 		rb.AddForce(globalForceVector);
+
+
+		inHouse = false;
 	}
 }
