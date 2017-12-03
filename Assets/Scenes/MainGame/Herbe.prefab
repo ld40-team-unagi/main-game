@@ -2564,4 +2564,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxAge: 1800
-  price: 100
+  cropYields: 100
+  seeds: 2

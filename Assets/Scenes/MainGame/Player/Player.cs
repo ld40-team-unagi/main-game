@@ -18,7 +18,10 @@ public class Player : MonoBehaviour {
 	public GameObject herbePot;
 	public GameObject mushroomPot;
 
+
 	Vector3 preVelocity;
+	public int cropYields;
+	public int seeds;
 
 	void Start(){
 		rb = this.GetComponent<Rigidbody> ();
@@ -32,15 +35,43 @@ public class Player : MonoBehaviour {
 		camera.transform.LookAt (transform);
 		camAngleY += 0.002f;
 
-		Vector3 forward = transform.forward;
-		if (Input.GetButtonDown("Fire1")){
-			GameObject obj = (GameObject)Instantiate(herbePot, transform.position + forward, Quaternion.identity);
-
-		}
-		if (Input.GetButtonDown("Fire2")){
-			GameObject obj = (GameObject)Instantiate(mushroomPot, transform.position + forward, Quaternion.identity);
+		if (Input.GetButtonDown ("Fire1")) {
+			SowSeed ();
 		}
 	}
+
+	public void AddCropYields(int n){
+		cropYields += n;
+	}
+
+	public int CropYields{
+		get{return cropYields;}
+	}
+
+	public void ResetCropYields(){
+		cropYields = 0;
+	}
+
+	public void AddSeeds(int n){
+		seeds += n;
+	}
+
+	public int Seeds{
+		get{return seeds;}
+	}
+
+	public void ResetSeeds(){
+		seeds = 0;
+	}
+
+	void SowSeed(){
+		if (seeds == 0)
+			return;
+		Vector3 forward = transform.forward;
+		GameObject obj = (GameObject)Instantiate(herbePot, transform.position + forward, Quaternion.identity);
+		seeds -= 1;
+	}
+
 
 	//void FixedUpdate(){
 		//rb.velocity = new Vector3(moveX, 0, moveZ);
@@ -58,7 +89,6 @@ public class Player : MonoBehaviour {
 		if (localForceVector.magnitude != 0f) {
 			transform.LookAt (transform.position + globalForceVector);
 		}
-		Debug.Log (globalForceVector);
 		rb.AddForce(globalForceVector);
 	}
 }

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Plant: MonoBehaviour{
 	public int maxAge = 1800;
-	public int price  = 100;
+	public int cropYields  = 100;
+	public int seeds  = 2;
 
 	public void Update(){
 		
