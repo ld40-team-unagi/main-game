@@ -59,7 +59,7 @@ public class Plant: MonoBehaviour{
 	int life;
 
 	void Animate(){
-		transform.eulerAngles = transform.eulerAngles + new Vector3 (0f, 0.8f, 0f);
+		transform.Rotate(new Vector3 (0, 1, 0));
 		if (animationTimer > 1f)return;
 		float scale = EaseOutElastic (0f, 1f, animationTimer);
 		transform.localScale = new Vector3 (scale, scale, scale);
