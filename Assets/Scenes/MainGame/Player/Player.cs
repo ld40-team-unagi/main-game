@@ -5,12 +5,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 	
-	public Camera camera;
-	[SerializeField]
-	private float movement = 3f;
-	[SerializeField]
-	private float rotateSpeed = 2f;
-	float moveX = 0f, moveZ = 0f;
+	public Camera cam;
 	Rigidbody rb;
 	public float camAngleY = 0f;
 	public float camDistance = 5f;
@@ -28,11 +23,11 @@ public class Player : MonoBehaviour {
 	}
 
 	void Update () {
-		camera.transform.position = transform.position + new Vector3 (
+		cam.transform.position = transform.position + new Vector3 (
 			-camDistance*Mathf.Sin(camAngleY), 
 			camHight, 
 			-camDistance*Mathf.Cos(camAngleY));
-		camera.transform.LookAt (transform);
+		cam.transform.LookAt (transform);
 		camAngleY += 0.002f;
 
 		if (Input.GetButtonDown ("Fire1")) {
@@ -68,7 +63,7 @@ public class Player : MonoBehaviour {
 		if (seeds == 0)
 			return;
 		Vector3 forward = transform.forward;
-		GameObject obj = (GameObject)Instantiate(herbePot, transform.position + forward, Quaternion.identity);
+		herbePot = (GameObject)Instantiate(herbePot, transform.position + forward, Quaternion.identity);
 		seeds -= 1;
 	}
 
