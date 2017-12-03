@@ -4,21 +4,37 @@ using UnityEngine;
 
 public class Plant: MonoBehaviour{
 	public int maxAge = 1800;
+
 	public int cropYields  = 100;
 	public int seeds  = 2;
+
 	public int deadAge = 4000;
+	public int maxLife = 1000;
+
+
+	public void Start(){
+		life = maxLife;
+	}
 
 	public void Update(){
 		age += 1;
 		if (IsDead()) {
 			return;
 		}
+
+		if (transform.up.y < Mathf.Cos(angle)) {
+			life -= 1;
+		}
+
 		if (CanCrop ()) {
 			Animate ();
 			return;
 		}
+
 		float s = ((float)age / (float)maxAge);
 		transform.localScale = new Vector3 (s, s, s);
+
+
 	}
 
 	public int CurrentAge(){
@@ -28,11 +44,21 @@ public class Plant: MonoBehaviour{
 	public bool CanCrop(){
 		return age >= maxAge && !IsDead();
 	}
+
 	public bool IsDead(){
-		return age >= deadAge;
+		if(life <= 0){
+			return true;
+		}
+		if(age >= deadAge){
+			return true;
+		}
+		return false;
 	}
+
 	int age = 0;
 	float animationTimer = 0;
+	float angle = 45;
+	int life;
 
 	void Animate(){
 		transform.eulerAngles = transform.eulerAngles + new Vector3 (0f, 0.8f, 0f);
