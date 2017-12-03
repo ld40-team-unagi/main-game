@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33493121804096794}
   - component: {fileID: 23254420506546000}
   m_Layer: 0
-  m_Name: HerbBag
+  m_Name: Herbbag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
