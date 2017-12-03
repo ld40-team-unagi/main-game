@@ -3,14 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Police : MonoBehaviour {
-
-	public GameObject Player;
-
 	void OnCollisionEnter(Collision other){
-
 		if (other.gameObject.name == "Player") {
-			Player.GetComponent<Player> ().isDead = true;
-			Debug.Log (Player.GetComponent<Player> ().isDead);
+			other.gameObject.GetComponent<Player> ().isDead = true;
 		}
 	}
 	// Use this for initialization
