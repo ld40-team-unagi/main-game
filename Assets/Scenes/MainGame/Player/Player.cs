@@ -23,6 +23,7 @@ public class Player : MonoBehaviour {
 
    	float mouseXSpeed = 0f;
 	float zoom = 0.5f;
+	float zoomSpeed = 0f;
 	void Start(){
 		rb = this.GetComponent<Rigidbody> ();
 
@@ -40,9 +41,18 @@ public class Player : MonoBehaviour {
 		if (inHouse) {
 			zoomProxi = 0.9f;
 		}else{
-			zoom = Mathf.Clamp(zoom + Input.GetAxis("Mouse ScrollWheel")*0.1f,0f,0.9f);
+			if (zoom <= 0f || 0.9f <= zoom) {
+				zoomSpeed = 0f;
+			} else {
+				zoomSpeed *= 0.97f;
+			}
+			zoomSpeed += Input.GetAxis ("Mouse ScrollWheel") * 0.0005f;
+
+			zoom =+ Mathf.Clamp(zoom - zoomSpeed*80f,0f,0.9f);
+
 			zoomProxi = zoom;
 		}
+		Debug.Log (zoomSpeed);
 
 
 		float zoomX = (1f + zoomProxi*2f) * Mathf.Cos (zoomProxi * Mathf.PI * 0.5f);
