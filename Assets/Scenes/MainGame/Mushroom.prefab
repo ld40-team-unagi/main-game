@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxAge: 1800
-  cropYields: 100
-  seeds: 2
-  deadAge: 4000
+  cropYields: 500
+  seeds: 1
+  deadAge: 5000
   maxLife: 200

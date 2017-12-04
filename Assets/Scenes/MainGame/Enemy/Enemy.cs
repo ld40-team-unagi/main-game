@@ -123,7 +123,7 @@ public class Enemy : MonoBehaviour {
 			bool isReachable;
 			do {
 				Vector3 direction = new Vector3 (Random.Range (-1f, 1f), Random.Range (-1f, 1f), Random.Range (-1f, 1f)).normalized;
-				randomWalkTarget = direction * Random.Range (1f, 10f);
+				randomWalkTarget = transform.position + direction * Random.Range (1f, 10f);
 				isReachable = !NavMesh.CalculatePath (transform.position, randomWalkTarget, NavMesh.AllAreas, new NavMeshPath());
 			} while(!isReachable);
 			agent.destination = randomWalkTarget;
