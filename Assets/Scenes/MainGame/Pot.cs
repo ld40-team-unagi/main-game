@@ -31,6 +31,10 @@ public class Pot : MonoBehaviour {
 
 	float deadAnimationTimer;
 
+	public bool IsLying(){
+		return transform.up.y < Mathf.Cos (45*Mathf.PI/180f);
+	}
+
 	//
 	void deadAnimate(){
 		if(deadAnimationTimer >= 1f){

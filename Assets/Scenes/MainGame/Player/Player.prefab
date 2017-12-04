@@ -360,12 +360,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0194c24f714f0487795a86e3b89f7d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 0}
-  movement: 3
-  rotateSpeed: 2
+  cam: {fileID: 0}
   camAngleY: 0
-  camDistance: 5
+  camDistance: 10
   camHight: 5
+  mushRand: 0.5
+  isDead: 0
   herbePot: {fileID: 1426045268077122, guid: bcf4609e29b576a4e9b544139f9b7083, type: 2}
   mushroomPot: {fileID: 1097781771138296, guid: 415f759e6bf1f444f9061810a0642239,
     type: 2}

@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 195742724729613392}
   - component: {fileID: 136496687569694684}
   - component: {fileID: 114998362447943172}
+  - component: {fileID: 135023356238075154}
   m_Layer: 0
   m_Name: Policeman
   m_TagString: Untagged
@@ -131,7 +132,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1327326871560580}
   m_LocalRotation: {x: 0, y: -0.17038143, z: 0, w: 0.9853782}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.26, y: 0, z: -7.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4134651243815850}
@@ -302,13 +303,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  counterForLostInit: 300
+  counterForLostInit: 100
   searchingFov: 60
   searchingDistance: 50
-  walkingSpeed: 3.5
+  walkingSpeed: 2
   walkingAcceleration: 8
-  runningSpeed: 8
+  runningSpeed: 4
   runningAcceleration: 12
+--- !u!135 &135023356238075154
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1327326871560580}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 8
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!136 &136496687569694684
 CapsuleCollider:
   m_ObjectHideFlags: 1

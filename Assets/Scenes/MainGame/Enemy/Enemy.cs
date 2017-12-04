@@ -2,6 +2,12 @@
 using System.Collections;
 using UnityEngine.AI;
 
+enum Status{
+	Walking,
+	Chasing,
+	Cropping
+}
+
 public class Enemy : MonoBehaviour {
 
 	public Transform target;
@@ -17,6 +23,8 @@ public class Enemy : MonoBehaviour {
 	NavMeshAgent agent;
 	float counterForLost;
 
+	Status status = Status.Walking;
+
 	void Start(){
 		counterForLost = counterForLostInit;
 		agent = GetComponent<NavMeshAgent>();
@@ -25,33 +33,57 @@ public class Enemy : MonoBehaviour {
 	void Update () {
 		Search ();
 
-		if (isRandomWalking) {
+		switch (status) {
+		case Status.Walking:
 			RandomWalk ();
-		} else {
+			return;
+		case Status.Chasing:
 			Chase ();
+			return;
+		case Status.Cropping:
+			Crop ();
+			return;
+		default:
+			return;
 		}
-
 	}
 
-	void changeModeToRunning(){
-		isRandomWalking = false;
+	void changeModeToCropping(){
+		status = Status.Cropping;
+		agent.speed = walkingSpeed;
+		agent.acceleration = walkingAcceleration;
+		agent.angularSpeed = agent.speed * 34f;
+	}
+
+	void changeModeToChasing(){
+		status = Status.Chasing;
 		agent.speed = runningSpeed;
 		agent.acceleration = runningAcceleration;
 		agent.angularSpeed = 360f;
 	}
 
 	void changeModeToWalking(){
-		isRandomWalking = true;
+		status = Status.Walking;
 		arrived = true;
 		agent.speed = walkingSpeed;
 		agent.acceleration = walkingAcceleration;
 		agent.angularSpeed = agent.speed * 34f;
 	}
 
+	GameObject cropTarget;
+
+	void Crop(){
+		if (cropTarget != null) {
+			changeModeToWalking ();
+			return;
+		}
+
+	}
+
 	void Search(){
 		if (Find (target.position, searchingFov * Mathf.PI / 180f,searchingDistance)) {
 			counterForLost = counterForLostInit;
-			changeModeToRunning ();
+			changeModeToChasing ();
 		} else {
 			counterForLost -= 1f;
 		}
@@ -82,7 +114,7 @@ public class Enemy : MonoBehaviour {
 
 	} 
 
-	bool isRandomWalking = true;
+
 	Vector3 randomWalkTarget;
 	bool arrived = true;
 	void RandomWalk(){
@@ -102,6 +134,31 @@ public class Enemy : MonoBehaviour {
 			}
 		}
 			
+	}
+
+	void OnTriggerStay(Collider c){
+		GameObject target = c.gameObject;
+		if (target.GetComponent<Pot> () != null) {
+			if (status != Status.Walking)
+				return;
+			OnTriggerStayWithPot (c);
+		}
+	}
+
+	void OnTriggerStayWithPot(Collider c){
+		
+
+		GameObject pot = c.gameObject;
+		if (pot.GetComponent<Pot> ().IsLying())
+			return;
+		agent.destination = pot.transform.position;
+		changeModeToCropping ();
+		cropTarget = pot;
+
+		if (Vector3.Distance (pot.transform.position, transform.position) < 1f) {
+			Vector3 direction = (Vector3.Scale((pot.transform.position - transform.position),new Vector3 (1f, 0f, 1f))+ new Vector3(Random.Range(-1f,1f),0f,Random.Range(-1f,1f))).normalized;
+			pot.GetComponent<Rigidbody> ().AddForceAtPosition (direction*2f, pot.transform.position + new Vector3 (0f, 0.5f, 0f));
+		}
 	}
 
 }
