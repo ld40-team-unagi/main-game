@@ -140,4 +140,4 @@ MonoBehaviour:
     type: 2}
   targetPlayer: {fileID: 0}
   rangeRadius: 1
-  spawningFrequency: 3600
+  spawningFrequency: 5400

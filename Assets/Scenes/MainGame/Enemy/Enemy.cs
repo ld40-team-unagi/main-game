@@ -20,14 +20,23 @@ public class Enemy : MonoBehaviour {
 	public float runningSpeed = 4f;
 	public float runningAcceleration = 12f;
 
+	public AudioClip walkingSoundClip;
+	public AudioClip runningSoundClip;
+
+	AudioSource audioSource;
+
 	NavMeshAgent agent;
 	float counterForLost;
 
 	Status status = Status.Walking;
 
+
+
 	void Start(){
 		counterForLost = counterForLostInit;
 		agent = GetComponent<NavMeshAgent>();
+		audioSource = GetComponent<AudioSource> ();
+		changeModeToWalking ();
 	}
 
 	void Update () {
@@ -55,6 +64,8 @@ public class Enemy : MonoBehaviour {
 		agent.speed = walkingSpeed;
 		agent.acceleration = walkingAcceleration;
 		agent.angularSpeed = agent.speed * 34f;
+		audioSource.clip = walkingSoundClip;
+		audioSource.Play();
 	}
 
 	void changeModeToChasing(){
@@ -62,6 +73,8 @@ public class Enemy : MonoBehaviour {
 		agent.speed = runningSpeed;
 		agent.acceleration = runningAcceleration;
 		agent.angularSpeed = 360f;
+		audioSource.clip = runningSoundClip;
+		audioSource.Play();
 	}
 
 	void changeModeToWalking(){
@@ -70,6 +83,8 @@ public class Enemy : MonoBehaviour {
 		agent.speed = walkingSpeed;
 		agent.acceleration = walkingAcceleration;
 		agent.angularSpeed = agent.speed * 34f;
+		audioSource.clip = runningSoundClip;
+		audioSource.Play();
 	}
 
 	GameObject cropTarget;
@@ -162,7 +177,7 @@ public class Enemy : MonoBehaviour {
 		cropTarget = pot;
 
 		if (Vector3.Distance (pot.transform.position, transform.position) < 1f) {
-			Vector3 direction = (Vector3.Scale((pot.transform.position - transform.position),new Vector3 (1f, 0f, 1f))+ new Vector3(Random.Range(-1f,1f),0f,Random.Range(-1f,1f))).normalized;
+			Vector3 direction = (Vector3.Scale((pot.transform.position - transform.position),new Vector3 (1f, 0f, 1f))+ new Vector3(Random.Range(-1f,1f),0f,Random.Range(-1f,1f))).normalized + new Vector3(0f,40f,0f);
 			pot.GetComponent<Rigidbody> ().AddForceAtPosition (direction*2f, pot.transform.position + new Vector3 (0f, 0.5f, 0f));
 		}
 	}
