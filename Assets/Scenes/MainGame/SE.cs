@@ -8,4 +8,8 @@ public class SE: MonoBehaviour{
 		source.clip = clip;
 		source.Play();
 	}
+	public static void Play(GameObject obj){
+		AudioSource source = obj.GetComponent<AudioSource>();
+		source.Play();
+	}
 }

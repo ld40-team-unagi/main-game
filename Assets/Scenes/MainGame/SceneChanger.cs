@@ -22,7 +22,7 @@ public class SceneChanger : MonoBehaviour {
 		bool flag = player.GetComponent<Player> ().isDead;
 		if (flag == true) {
 
-			fadePanel.GetComponent<Fade> ().enable = true;
+			fadePanel.GetComponent<Fade> ().Enable();
 
 			if(fadePanel.GetComponent<Fade> ().IsFinish() == true){
 				SceneManager.LoadScene ("GameOver");

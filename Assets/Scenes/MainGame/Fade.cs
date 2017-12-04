@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class Fade : MonoBehaviour {
 	public float speed = 0.01f;
-	public bool enable = false;
 
+	bool enable = false;
 	bool isFinish = false;
 	float alpha = 0;
 	float red, green, blue;
@@ -15,8 +15,15 @@ public class Fade : MonoBehaviour {
 	public bool IsFinish(){
 		return isFinish;
 	}
+	public void Enable(){
+		if(!enable){
+			SE.Play(gameObject);
+		}
+		enable = true;
+	}
 	public void Reset(){
 		alpha = 0;
+		enable = false;
 		apply();
 	}
 	// Use this for initialization
