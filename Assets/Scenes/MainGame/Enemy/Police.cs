@@ -6,6 +6,8 @@ public class Police : MonoBehaviour {
 	void OnCollisionEnter(Collision other){
 
 		if (other.gameObject.name == "Player") {
+			if (!other.gameObject.GetComponent<Player> ().isProduced)
+				return;
 			other.gameObject.GetComponent<Player> ().isDead = true;
 		}
 	}
