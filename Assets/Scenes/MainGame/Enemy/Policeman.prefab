@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 136496687569694684}
   - component: {fileID: 114998362447943172}
   - component: {fileID: 135023356238075154}
+  - component: {fileID: 114011673687488792}
   m_Layer: 0
   m_Name: Policeman
   m_TagString: Untagged
@@ -291,6 +292,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1198924021101354}
   m_Mesh: {fileID: 4300000, guid: 48fac84f41ec540eb9d6817d9ea4dc0e, type: 3}
+--- !u!114 &114011673687488792
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1327326871560580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b9611d791de2ce43adda7522c4b3922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114998362447943172
 MonoBehaviour:
   m_ObjectHideFlags: 1

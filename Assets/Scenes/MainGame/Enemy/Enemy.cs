@@ -117,6 +117,7 @@ public class Enemy : MonoBehaviour {
 
 	Vector3 randomWalkTarget;
 	bool arrived = true;
+	long randomWarkingTime;
 	void RandomWalk(){
 		if (arrived) {
 			bool isReachable;
@@ -127,11 +128,14 @@ public class Enemy : MonoBehaviour {
 			} while(!isReachable);
 			agent.destination = randomWalkTarget;
 			arrived = false;
+			randomWarkingTime = 0;
 		
 		} else {
-			if (agent.velocity.magnitude == 0f) {
+			
+			if (randomWarkingTime > 60 &&agent.velocity.magnitude < 0.1f) {
 				arrived = true;
 			}
+			randomWarkingTime++;
 		}
 			
 	}
