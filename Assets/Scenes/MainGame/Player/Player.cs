@@ -25,6 +25,9 @@ public class Player : MonoBehaviour {
    	float mouseXSpeed = 0f;
 	float zoom = 0.5f;
 	float zoomSpeed = 0f;
+
+	float backPackMass = 1f;
+
 	void Start(){
 		rb = this.GetComponent<Rigidbody> ();
 
@@ -85,6 +88,22 @@ public class Player : MonoBehaviour {
 		}
 
 		isDead = isProduced && seeds == 0 && GameObject.FindGameObjectsWithTag ("Pot").Length == 0;
+
+		UpdateBag ();
+	}
+
+	void UpdateBag(){
+		GameObject backPack = transform.Find ("BackPack").gameObject;
+		float scale;
+		if (cropYields > 0) {
+			backPackMass = 1f+cropYields * 0.001f;
+			scale = backPackMass;
+		} else {
+			backPackMass = 1f;
+			scale = 0f;
+		}
+
+		backPack.transform.localScale = new Vector3 (scale,scale,scale);
 	}
 
 	void OnTriggerStay(Collider c){
@@ -150,15 +169,15 @@ public class Player : MonoBehaviour {
 		if (!isDead) {
 			float speed = 100.0f;
 			Vector3 localForceVector = new Vector3 (
-				                           Input.GetAxis ("Horizontal") * speed,
+				                           Input.GetAxis ("Horizontal"),
 				                           0,
-				                           Input.GetAxis ("Vertical") * speed
-			                           );
+				                           Input.GetAxis ("Vertical")
+			                           ).normalized*speed;
 			Vector3 globalForceVector = Quaternion.AngleAxis (camAngleY * 180f / Mathf.PI, new Vector3 (0f, 1f, 0f)) * localForceVector;
 			if (localForceVector.magnitude != 0f) {
 				transform.LookAt (transform.position + globalForceVector);
 			}
-			rb.AddForce (globalForceVector);
+			rb.AddForce (globalForceVector/(backPackMass));
 
 
 			inHouse = false;
