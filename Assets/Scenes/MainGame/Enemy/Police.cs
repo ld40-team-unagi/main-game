@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Police : MonoBehaviour {
 	void OnCollisionEnter(Collision other){
+
 		if (other.gameObject.name == "Player") {
 			other.gameObject.GetComponent<Player> ().isDead = true;
 		}
@@ -15,6 +16,5 @@ public class Police : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
 	}
 }
