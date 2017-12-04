@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114766551209065524}
   m_Layer: 9
   m_Name: HerbePot
-  m_TagString: Untagged
+  m_TagString: Pot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,3 +124,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plant: {fileID: 1227112603605018, guid: b542aefc94162c14ea94a0492a088ed1, type: 2}
+  plantScript: {fileID: 0}
