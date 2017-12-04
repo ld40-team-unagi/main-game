@@ -26,13 +26,12 @@ public class Cropper : MonoBehaviour {
 			GameObject plant = pot.GetComponent<Pot> ().plant;
 			if (plant == null)
 				return;
-			if (!plant.GetComponent<Plant>().CanCrop())
+			if (!plant.GetComponent<Plant>().Crop())
 				return;
 			int cropYields = plant.GetComponent<Plant> ().cropYields;
 			player.GetComponent<Player>().AddCropYields(cropYields);
 			int seeds = plant.GetComponent<Plant> ().seeds;
 			player.GetComponent<Player>().AddSeeds(seeds);
-			Destroy(pot);
 		}
 	}
 }
