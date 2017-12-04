@@ -2566,5 +2566,5 @@ MonoBehaviour:
   maxAge: 1800
   cropYields: 100
   seeds: 2
-  deadAge: 4000
+  deadAge: 5000
   maxLife: 200

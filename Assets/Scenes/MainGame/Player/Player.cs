@@ -21,34 +21,63 @@ public class Player : MonoBehaviour {
 	public int seeds;
 	bool inHouse = false;
 
+   	float mouseXSpeed = 0f;
+	float zoom = 0.5f;
 	void Start(){
 		rb = this.GetComponent<Rigidbody> ();
+
+		Cursor.visible = false;
+		Cursor.lockState = CursorLockMode.Locked;
 	}
 
 	void Update () {
+		mouseXSpeed *= 0.97f;
+		mouseXSpeed += Input.GetAxis ("Mouse X") * 0.002f;
+		camAngleY += mouseXSpeed;
+
+		Vector3 headPosition = transform.position + new Vector3 (0f, 1f, 0f);
+		float zoomProxi;
 		if (inHouse) {
-			camAngleY = 0f;
-			cam.transform.position = transform.position + new Vector3 (
-				0f, 
-				camHight*2f, 
-				0f
-			);
+			zoomProxi = 0.9f;
+		}else{
+			zoom = Mathf.Clamp(zoom + Input.GetAxis("Mouse ScrollWheel")*0.1f,0f,0.9f);
+			zoomProxi = zoom;
+		}
+
+
+		float zoomX = (1f + zoomProxi*2f) * Mathf.Cos (zoomProxi * Mathf.PI * 0.5f);
+		float zoomY = (1f + zoomProxi*2f) * Mathf.Sin (zoomProxi * Mathf.PI * 0.5f);
+		if (inHouse) {
+			cam.transform.position = headPosition + new Vector3 (
+				-camDistance*0.1f*Mathf.Sin(camAngleY), 
+				camHight*3f, 
+				-camDistance*0.1f*Mathf.Cos(camAngleY)
+			)*zoomProxi;
 			cam.transform.eulerAngles = new Vector3(90f,0f,0f);
 		} else {
-			camAngleY += 0.002f;
-			cam.transform.position = transform.position + new Vector3 (
-			-camDistance*Mathf.Sin(camAngleY), 
-			camHight, 
-			-camDistance*Mathf.Cos(camAngleY));
-			cam.transform.LookAt (transform);
+			cam.transform.position = headPosition + new Vector3 (
+				-camDistance*Mathf.Sin(camAngleY)*zoomX, 
+				camHight*zoomY, 
+				-camDistance*Mathf.Cos(camAngleY)*zoomX
+			);
+			
 
 		}
+		cam.transform.LookAt (headPosition);
+
+
+
+
 
 
 		if (Input.GetButtonDown ("Fire1")) {
 			SowSeed ();
 		}
 
+		if (isDead) {
+			Cursor.visible = true;
+			Cursor.lockState = CursorLockMode.None;
+		}
 	}
 
 	void OnTriggerStay(Collider c){

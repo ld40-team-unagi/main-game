@@ -364,7 +364,7 @@ MonoBehaviour:
   camAngleY: 0
   camDistance: 10
   camHight: 5
-  mushRand: 0.5
+  mushRand: 0.05
   isDead: 0
   herbePot: {fileID: 1426045268077122, guid: bcf4609e29b576a4e9b544139f9b7083, type: 2}
   mushroomPot: {fileID: 1097781771138296, guid: 415f759e6bf1f444f9061810a0642239,
