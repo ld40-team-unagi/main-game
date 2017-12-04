@@ -14,6 +14,7 @@ public class Player : MonoBehaviour {
 	public bool isDead = false;
 	public GameObject herbePot;
 	public GameObject mushroomPot;
+	public bool isProduced = false;
 
 
 	Vector3 preVelocity;
@@ -81,6 +82,7 @@ public class Player : MonoBehaviour {
 
 
 		if (Input.GetButtonDown ("Fire1")) {
+			isProduced = true;
 			SowSeed ();
 		}
 
