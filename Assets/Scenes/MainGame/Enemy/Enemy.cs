@@ -37,6 +37,7 @@ public class Enemy : MonoBehaviour {
 		agent = GetComponent<NavMeshAgent>();
 		audioSource = GetComponent<AudioSource> ();
 		changeModeToWalking ();
+
 	}
 
 	void Update () {
@@ -64,8 +65,10 @@ public class Enemy : MonoBehaviour {
 		agent.speed = walkingSpeed;
 		agent.acceleration = walkingAcceleration;
 		agent.angularSpeed = agent.speed * 34f;
-		audioSource.clip = walkingSoundClip;
-		audioSource.Play();
+		if (audioSource.clip != walkingSoundClip) {
+			audioSource.clip = walkingSoundClip;
+			audioSource.Play();
+		}
 	}
 
 	void changeModeToChasing(){
@@ -73,8 +76,10 @@ public class Enemy : MonoBehaviour {
 		agent.speed = runningSpeed;
 		agent.acceleration = runningAcceleration;
 		agent.angularSpeed = 360f;
-		audioSource.clip = runningSoundClip;
-		audioSource.Play();
+		if (audioSource.clip != runningSoundClip) {
+			audioSource.clip = runningSoundClip;
+			audioSource.Play();
+		}
 	}
 
 	void changeModeToWalking(){
@@ -83,8 +88,10 @@ public class Enemy : MonoBehaviour {
 		agent.speed = walkingSpeed;
 		agent.acceleration = walkingAcceleration;
 		agent.angularSpeed = agent.speed * 34f;
-		audioSource.clip = runningSoundClip;
-		audioSource.Play();
+		if (audioSource.clip != walkingSoundClip) {
+			audioSource.clip = walkingSoundClip;
+			audioSource.Play();
+		}
 	}
 
 	GameObject cropTarget;
@@ -94,7 +101,6 @@ public class Enemy : MonoBehaviour {
 			changeModeToWalking ();
 			return;
 		}
-
 	}
 
 	void Search(){
