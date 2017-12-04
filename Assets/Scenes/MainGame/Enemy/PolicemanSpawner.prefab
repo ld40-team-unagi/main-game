@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b5ea86fae5ce4bb0a671c644864c049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  policemanPrefab: {fileID: 1327326871560580, guid: f3eafed910f064845a3bd08dab5d466d,
+  spawnedPrefab: {fileID: 1327326871560580, guid: f3eafed910f064845a3bd08dab5d466d,
     type: 2}
   targetPlayer: {fileID: 0}
   rangeRadius: 1
