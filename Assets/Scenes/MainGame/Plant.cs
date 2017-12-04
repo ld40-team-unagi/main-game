@@ -11,14 +11,23 @@ public class Plant: MonoBehaviour{
 	public int deadAge = 4000;
 	public int maxLife = 1000;
 
+	public AudioClip potPut;
+	public AudioClip potCut;
+	public AudioClip potOk;
+	public AudioClip potNg;
 
 	public void Start(){
+		SE.Play(gameObject, potPut);
 		life = maxLife;
 	}
 
 	public void Update(){
 		age += 1;
 		if (IsDead()) {
+			if(ngSE){
+				SE.Play(gameObject, potNg);
+				ngSE = false;
+			}
 			return;
 		}
 
@@ -27,12 +36,25 @@ public class Plant: MonoBehaviour{
 		}
 
 		if (CanCrop ()) {
+			if(okSE){
+				SE.Play(gameObject, potOk);
+				okSE = false;
+			}
 			Animate ();
 			return;
 		}
 
 		float s = ((float)age / (float)maxAge);
 		transform.localScale = new Vector3 (s, s, s);
+	}
+
+	public bool Crop(){
+		if(CanCrop()){
+			SE.Play(gameObject, potCut);
+			life = 0;
+			return true;
+		}
+		return false;
 	}
 
 	public int CurrentAge(){
@@ -57,6 +79,9 @@ public class Plant: MonoBehaviour{
 	float animationTimer = 0;
 	float angle = 45;
 	int life;
+	bool cutSE = true;
+	bool ngSE = true;
+	bool okSE = true;
 
 	void Animate(){
 		transform.Rotate(new Vector3 (0, 1, 0));
