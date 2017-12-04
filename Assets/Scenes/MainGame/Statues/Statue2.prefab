@@ -121,7 +121,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4139012651580924}
-  - component: {fileID: 65014149055993466}
   m_Layer: 0
   m_Name: Statue2
   m_TagString: Untagged
@@ -304,9 +303,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1327184287557222}
-  m_LocalRotation: {x: 0.105654545, y: 0.3285166, z: 0.28735876, w: 0.8934981}
+  m_LocalRotation: {x: 0.10565456, y: 0.3285166, z: 0.28735876, w: 0.8934981}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.99999994, z: 1}
+  m_LocalScale: {x: 1.2793653, y: 1.2793654, z: 1.2793654}
   m_Children: []
   m_Father: {fileID: 4139012651580924}
   m_RootOrder: 1
@@ -317,9 +316,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1291371578726202}
-  m_LocalRotation: {x: 0.006847662, y: -0.41390648, z: -0.08796168, w: 0.9060338}
+  m_LocalRotation: {x: 0.006847651, y: -0.4139065, z: -0.08796168, w: 0.9060338}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.9999999, z: 0.99999994}
+  m_LocalScale: {x: 0.777724, y: 0.7777241, z: 0.77772415}
   m_Children: []
   m_Father: {fileID: 4139012651580924}
   m_RootOrder: 5
@@ -760,15 +759,3 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1291371578726202}
   m_Mesh: {fileID: 4300008, guid: 49a74bb6f5008ea4698fcbf28b0f614c, type: 3}
---- !u!65 &65014149055993466
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1593350900379646}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 3, z: 4}
-  m_Center: {x: 0, y: 1.5, z: 0}
