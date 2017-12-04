@@ -15,6 +15,7 @@ public class Plant: MonoBehaviour{
 	public AudioClip potCut;
 	public AudioClip potOk;
 	public AudioClip potNg;
+	public AudioClip potNoCut;
 
 	public void Start(){
 		SE.Play(gameObject, potPut);
@@ -54,6 +55,7 @@ public class Plant: MonoBehaviour{
 			life = 0;
 			return true;
 		}
+		SE.Play(gameObject, potNoCut);
 		return false;
 	}
 

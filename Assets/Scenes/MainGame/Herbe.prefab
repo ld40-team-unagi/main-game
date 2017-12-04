@@ -2653,3 +2653,4 @@ MonoBehaviour:
   potCut: {fileID: 8300000, guid: 2b27505b8023c684d844bf559f175304, type: 3}
   potOk: {fileID: 8300000, guid: 47a5a93f753064a4aad999569d7925df, type: 3}
   potNg: {fileID: 8300000, guid: f5844b5a5bf39494eba13195b7a52bec, type: 3}
+  potNoCut: {fileID: 8300000, guid: 4cb99548795d5c646ad7be3364c01d3e, type: 3}
