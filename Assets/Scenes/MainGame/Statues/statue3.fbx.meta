@@ -16,6 +16,17 @@ ModelImporter:
     100016: //RootNode
     100018: Text
     100020: Text.001
+    100022: Circle.010
+    100024: Circle.011
+    100026: Cube.069
+    100028: Cube.070
+    100030: Cube.071
+    100032: Cube.072
+    100034: Cube.073
+    100036: Cube.074
+    100038: Cube.075
+    100040: Text.007
+    100042: Text.008
     400000: Circle.008
     400002: Circle.009
     400004: Cube.002
@@ -27,6 +38,17 @@ ModelImporter:
     400016: //RootNode
     400018: Text
     400020: Text.001
+    400022: Circle.010
+    400024: Circle.011
+    400026: Cube.069
+    400028: Cube.070
+    400030: Cube.071
+    400032: Cube.072
+    400034: Cube.073
+    400036: Cube.074
+    400038: Cube.075
+    400040: Text.007
+    400042: Text.008
     2300000: Circle.008
     2300002: Circle.009
     2300004: Cube.002
@@ -37,6 +59,17 @@ ModelImporter:
     2300014: Plane.073
     2300016: Text
     2300018: Text.001
+    2300020: Circle.010
+    2300022: Circle.011
+    2300024: Cube.069
+    2300026: Cube.070
+    2300028: Cube.071
+    2300030: Cube.072
+    2300032: Cube.073
+    2300034: Cube.074
+    2300036: Cube.075
+    2300038: Text.007
+    2300040: Text.008
     3300000: Circle.008
     3300002: Circle.009
     3300004: Cube.002
@@ -47,6 +80,17 @@ ModelImporter:
     3300014: Plane.073
     3300016: Text
     3300018: Text.001
+    3300020: Circle.010
+    3300022: Circle.011
+    3300024: Cube.069
+    3300026: Cube.070
+    3300028: Cube.071
+    3300030: Cube.072
+    3300032: Cube.073
+    3300034: Cube.074
+    3300036: Cube.075
+    3300038: Text.007
+    3300040: Text.008
     4300000: Plane.073
     4300002: Text.001
     4300004: Text
@@ -57,6 +101,17 @@ ModelImporter:
     4300014: Cube.052
     4300016: Cube.059
     4300018: Cube.002
+    4300020: Cube.075
+    4300022: Cube.074
+    4300024: Cube.073
+    4300026: Cube.072
+    4300028: Circle.011
+    4300030: Circle.010
+    4300032: Cube.071
+    4300034: Cube.070
+    4300036: Cube.069
+    4300038: Text.008
+    4300040: Text.007
   externalObjects:
   - first:
       type: UnityEngine:Material

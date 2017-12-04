@@ -53,8 +53,6 @@ public class Player : MonoBehaviour {
 
 			zoomProxi = zoom;
 		}
-		Debug.Log (zoomSpeed);
-
 
 		float zoomX = (1f + zoomProxi*2f) * Mathf.Cos (zoomProxi * Mathf.PI * 0.5f);
 		float zoomY = (1f + zoomProxi*2f) * Mathf.Sin (zoomProxi * Mathf.PI * 0.5f);
@@ -76,11 +74,6 @@ public class Player : MonoBehaviour {
 		}
 		cam.transform.LookAt (headPosition);
 
-
-
-
-
-
 		if (Input.GetButtonDown ("Fire1")) {
 			isProduced = true;
 			SowSeed ();
@@ -90,6 +83,8 @@ public class Player : MonoBehaviour {
 			Cursor.visible = true;
 			Cursor.lockState = CursorLockMode.None;
 		}
+
+		isDead = isProduced && seeds == 0 && GameObject.FindGameObjectsWithTag ("Pot").Length == 0;
 	}
 
 	void OnTriggerStay(Collider c){
@@ -97,23 +92,15 @@ public class Player : MonoBehaviour {
 		if (target.GetComponent<House> () != null) {
 			inHouse = true;
 		}
+
+		if (target.tag == "Buyer") {
+			if (cropYields == 0)
+				return;
+			ScoreCounte.AddScore((uint)cropYields);
+			cropYields = 0;
+			Destroy (target);
+		}
 	}
-
-
-//	void OnTriggerEnter(Collider c){
-//		GameObject target = c.gameObject;
-//		if (target.GetComponent<House> () != null) {
-//			inHouse = true;
-//		}
-//	}
-//
-//	void OnTriggerExit(Collider c){
-//		GameObject target = c.gameObject;
-//		if (target.GetComponent<House> () != null) {
-//			inHouse = false;
-//		}
-//	}
-
 
 	public void AddCropYields(int n){
 		cropYields += n;
