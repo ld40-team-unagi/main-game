@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4229217226253818}
+  - component: {fileID: 114244081970319406}
   m_Layer: 0
   m_Name: PolicemanSpawner
   m_TagString: Untagged
@@ -33,9 +34,25 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1076393821734562}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.51550084, y: 1.9798305, z: 0.24833106}
+  m_LocalPosition: {x: -33.3, y: 8.5, z: 30.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114244081970319406
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1076393821734562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b5ea86fae5ce4bb0a671c644864c049, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  policemanPrefab: {fileID: 1327326871560580, guid: f3eafed910f064845a3bd08dab5d466d,
+    type: 2}
+  targetPlayer: {fileID: 0}
+  rangeRadius: 1
+  spawningFrequency: 3600
