@@ -285,7 +285,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4883360781772338, guid: c9a22551381b84d5196b393ec9e24d88, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4883360781772338, guid: c9a22551381b84d5196b393ec9e24d88, type: 2}
       propertyPath: m_LocalPosition.y
@@ -317,23 +317,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114992670853075500, guid: c9a22551381b84d5196b393ec9e24d88,
         type: 2}
-      propertyPath: camera
-      value: 
-      objectReference: {fileID: 997320797}
-    - target: {fileID: 114992670853075500, guid: c9a22551381b84d5196b393ec9e24d88,
-        type: 2}
       propertyPath: cam
       value: 
       objectReference: {fileID: 997320797}
     - target: {fileID: 114992670853075500, guid: c9a22551381b84d5196b393ec9e24d88,
         type: 2}
-      propertyPath: camHight
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114992670853075500, guid: c9a22551381b84d5196b393ec9e24d88,
-        type: 2}
       propertyPath: camDistance
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c9a22551381b84d5196b393ec9e24d88, type: 2}
@@ -845,6 +835,16 @@ Prefab:
       propertyPath: Mute
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 82827512720683658, guid: 4d44e817ae971e74da75bcf358da6009,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82827512720683658, guid: 4d44e817ae971e74da75bcf358da6009,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.024
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d44e817ae971e74da75bcf358da6009, type: 2}
   m_IsPrefabParent: 0
@@ -1196,6 +1196,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 82711881186923594, guid: 8d3421be80fd6453794aa66c41fbb526,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8d3421be80fd6453794aa66c41fbb526, type: 2}
   m_IsPrefabParent: 0
@@ -1251,7 +1256,6 @@ GameObject:
   - component: {fileID: 997320801}
   - component: {fileID: 997320797}
   - component: {fileID: 997320796}
-  - component: {fileID: 997320795}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1259,13 +1263,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &997320795
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 997320794}
-  m_Enabled: 1
 --- !u!124 &997320796
 Behaviour:
   m_ObjectHideFlags: 0

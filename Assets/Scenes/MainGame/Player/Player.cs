@@ -22,6 +22,8 @@ public class Player : MonoBehaviour {
 	public int seeds;
 	bool inHouse = false;
 
+	Transform head;
+
    	float mouseXSpeed = 0f;
 	float zoom = 0.5f;
 	float zoomSpeed = 0f;
@@ -33,13 +35,15 @@ public class Player : MonoBehaviour {
 
 		Cursor.visible = false;
 		Cursor.lockState = CursorLockMode.Locked;
+
+		head = transform.Find ("Head");
 	}
 
 	void Update () {
 		mouseXSpeed *= 0.97f;
 		mouseXSpeed += Input.GetAxis ("Mouse X") * 0.002f;
 		camAngleY += mouseXSpeed;
-
+		head.transform.eulerAngles = new Vector3 (0f, camAngleY*180f/Mathf.PI, 0f);
 		Vector3 headPosition = transform.position + new Vector3 (0f, 1f, 0f);
 		float zoomProxi;
 		if (inHouse) {
@@ -62,7 +66,7 @@ public class Player : MonoBehaviour {
 		if (inHouse) {
 			cam.transform.position = headPosition + new Vector3 (
 				-camDistance*0.1f*Mathf.Sin(camAngleY), 
-				camHight*3f, 
+				camHight*4f, 
 				-camDistance*0.1f*Mathf.Cos(camAngleY)
 			)*zoomProxi;
 			cam.transform.eulerAngles = new Vector3(90f,0f,0f);
@@ -85,9 +89,9 @@ public class Player : MonoBehaviour {
 		if (isDead) {
 			Cursor.visible = true;
 			Cursor.lockState = CursorLockMode.None;
+		}else{
+			isDead = isProduced && seeds == 0 && GameObject.FindGameObjectsWithTag ("Pot").Length == 0;
 		}
-
-		isDead = isProduced && seeds == 0 && GameObject.FindGameObjectsWithTag ("Pot").Length == 0;
 
 		UpdateBag ();
 	}
