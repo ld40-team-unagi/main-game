@@ -24,9 +24,6 @@ public class House : MonoBehaviour {
 		}
 
 		roof.transform.position = transform.position + new Vector3(0f,roofHeight,0f);
-
-
-		Debug.Log (hasPlayer);
 		hasPlayer = false;
 	}
 
