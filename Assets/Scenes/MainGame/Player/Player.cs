@@ -89,9 +89,9 @@ public class Player : MonoBehaviour {
 		if (isDead) {
 			Cursor.visible = true;
 			Cursor.lockState = CursorLockMode.None;
+		}else{
+			isDead = isProduced && seeds == 0 && GameObject.FindGameObjectsWithTag ("Pot").Length == 0;
 		}
-
-		isDead = isProduced && seeds == 0 && GameObject.FindGameObjectsWithTag ("Pot").Length == 0;
 
 		UpdateBag ();
 	}
