@@ -119,19 +119,23 @@ public class Player : MonoBehaviour {
 
 	void FixedUpdate() 
 	{
-		float speed = 100.0f;
-		Vector3 localForceVector = new Vector3 (
-			                           Input.GetAxis ("Horizontal") * speed,
-			                           0,
-			                           Input.GetAxis ("Vertical") * speed
-		                           );
-		Vector3 globalForceVector = Quaternion.AngleAxis (camAngleY*180f/Mathf.PI, new Vector3 (0f, 1f, 0f)) * localForceVector;
-		if (localForceVector.magnitude != 0f) {
-			transform.LookAt (transform.position + globalForceVector);
+		if (!isDead) {
+			float speed = 100.0f;
+			Vector3 localForceVector = new Vector3 (
+				                           Input.GetAxis ("Horizontal") * speed,
+				                           0,
+				                           Input.GetAxis ("Vertical") * speed
+			                           );
+			Vector3 globalForceVector = Quaternion.AngleAxis (camAngleY * 180f / Mathf.PI, new Vector3 (0f, 1f, 0f)) * localForceVector;
+			if (localForceVector.magnitude != 0f) {
+				transform.LookAt (transform.position + globalForceVector);
+			}
+			rb.AddForce (globalForceVector);
+
+
+			inHouse = false;
+		} else {
+			rb.constraints = RigidbodyConstraints.FreezeAll;
 		}
-		rb.AddForce(globalForceVector);
-
-
-		inHouse = false;
 	}
 }
