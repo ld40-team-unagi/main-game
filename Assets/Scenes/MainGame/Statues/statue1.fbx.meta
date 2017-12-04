@@ -1,0 +1,147 @@
+fileFormatVersion: 2
+guid: 9d920b16dcfd9704cb02ead0ed3f5787
+timeCreated: 1512392975
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Cube.018
+    100002: Cube.019
+    100004: Cube.041
+    100006: Cube.048
+    100008: Cube.049
+    100010: Cube.050
+    100012: Cube.051
+    100014: //RootNode
+    100016: Text.003
+    100018: Text.004
+    100020: Text.005
+    100022: Text.006
+    400000: Cube.018
+    400002: Cube.019
+    400004: Cube.041
+    400006: Cube.048
+    400008: Cube.049
+    400010: Cube.050
+    400012: Cube.051
+    400014: //RootNode
+    400016: Text.003
+    400018: Text.004
+    400020: Text.005
+    400022: Text.006
+    2300000: Cube.018
+    2300002: Cube.019
+    2300004: Cube.041
+    2300006: Cube.048
+    2300008: Cube.049
+    2300010: Cube.050
+    2300012: Cube.051
+    2300014: Text.003
+    2300016: Text.004
+    2300018: Text.005
+    2300020: Text.006
+    3300000: Cube.018
+    3300002: Cube.019
+    3300004: Cube.041
+    3300006: Cube.048
+    3300008: Cube.049
+    3300010: Cube.050
+    3300012: Cube.051
+    3300014: Text.003
+    3300016: Text.004
+    3300018: Text.005
+    3300020: Text.006
+    4300000: Text.006
+    4300002: Text.005
+    4300004: Text.004
+    4300006: Text.003
+    4300008: Cube.051
+    4300010: Cube.050
+    4300012: Cube.049
+    4300014: Cube.048
+    4300016: Cube.041
+    4300018: Cube.019
+    4300020: Cube.018
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: statue
+    second: {fileID: 2100000, guid: cfdca85554a4f5240bee10236ceb88f1, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
