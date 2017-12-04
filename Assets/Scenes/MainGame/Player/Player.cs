@@ -53,8 +53,6 @@ public class Player : MonoBehaviour {
 
 			zoomProxi = zoom;
 		}
-		Debug.Log (zoomSpeed);
-
 
 		float zoomX = (1f + zoomProxi*2f) * Mathf.Cos (zoomProxi * Mathf.PI * 0.5f);
 		float zoomY = (1f + zoomProxi*2f) * Mathf.Sin (zoomProxi * Mathf.PI * 0.5f);
@@ -76,11 +74,6 @@ public class Player : MonoBehaviour {
 		}
 		cam.transform.LookAt (headPosition);
 
-
-
-
-
-
 		if (Input.GetButtonDown ("Fire1")) {
 			isProduced = true;
 			SowSeed ();
@@ -90,6 +83,8 @@ public class Player : MonoBehaviour {
 			Cursor.visible = true;
 			Cursor.lockState = CursorLockMode.None;
 		}
+
+		isDead = isProduced && seeds == 0 && GameObject.FindGameObjectsWithTag ("Pot").Length == 0;
 	}
 
 	void OnTriggerStay(Collider c){
