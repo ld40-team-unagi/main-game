@@ -21,7 +21,7 @@ public class EntitySpawner : MonoBehaviour {
 
 	void Spawn(){
 		GameObject policeman = Instantiate(spawnedPrefab, spawningPosition(), Quaternion.identity);
-		policeman.GetComponent<Enemy> ().target = targetPlayer.transform;
+		policeman.GetComponent<Enemy> ().target = targetPlayer;
 	}
 
 	Vector3 spawningPosition(){

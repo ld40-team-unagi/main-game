@@ -10,7 +10,7 @@ enum Status{
 
 public class Enemy : MonoBehaviour {
 
-	public Transform target;
+	public GameObject target;
 
 	public float counterForLostInit = 300f;
 	public float searchingFov = 60f;
@@ -31,7 +31,9 @@ public class Enemy : MonoBehaviour {
 	}
 
 	void Update () {
-		Search ();
+		if (target.GetComponent<Player> ().isProduced) {
+			Search ();
+		}
 
 		switch (status) {
 		case Status.Walking:
@@ -81,7 +83,7 @@ public class Enemy : MonoBehaviour {
 	}
 
 	void Search(){
-		if (Find (target.position, searchingFov * Mathf.PI / 180f,searchingDistance)) {
+		if (Find (target.transform.position, searchingFov * Mathf.PI / 180f,searchingDistance)) {
 			counterForLost = counterForLostInit;
 			changeModeToChasing ();
 		} else {
@@ -109,7 +111,7 @@ public class Enemy : MonoBehaviour {
 			agent.destination = transform.position; 
 			changeModeToWalking ();
 		} else {
-			agent.destination = target.position;
+			agent.destination = target.transform.position;
 		}
 
 	} 
