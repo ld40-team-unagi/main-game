@@ -71,7 +71,6 @@ GameObject:
   - component: {fileID: 114002985549997842}
   - component: {fileID: 64378857042052720}
   - component: {fileID: 65114602588088174}
-  - component: {fileID: 114433284758287324}
   m_Layer: 0
   m_Name: House6x12
   m_TagString: Untagged
@@ -86,7 +85,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1995915379237162}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -17.113998, y: 0, z: -25.748428}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4673466732750910}
@@ -244,18 +243,6 @@ BoxCollider:
   m_Size: {x: 12.7, y: 4.87, z: 6.59}
   m_Center: {x: -3.06, y: 2.15, z: 0}
 --- !u!114 &114002985549997842
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1995915379237162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29af62a2ada41411eab3a4f6c70dd750, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxRoofHeight: 20
---- !u!114 &114433284758287324
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
