@@ -92,23 +92,15 @@ public class Player : MonoBehaviour {
 		if (target.GetComponent<House> () != null) {
 			inHouse = true;
 		}
+
+		if (target.tag == "Buyer") {
+			if (cropYields == 0)
+				return;
+			ScoreCounte.AddScore((uint)cropYields);
+			cropYields = 0;
+			Destroy (target);
+		}
 	}
-
-
-//	void OnTriggerEnter(Collider c){
-//		GameObject target = c.gameObject;
-//		if (target.GetComponent<House> () != null) {
-//			inHouse = true;
-//		}
-//	}
-//
-//	void OnTriggerExit(Collider c){
-//		GameObject target = c.gameObject;
-//		if (target.GetComponent<House> () != null) {
-//			inHouse = false;
-//		}
-//	}
-
 
 	public void AddCropYields(int n){
 		cropYields += n;

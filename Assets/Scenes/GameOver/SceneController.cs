@@ -13,6 +13,7 @@ public class SceneController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetMouseButtonDown (0)) {
+			ScoreCounte.Rest ();
 			SceneManager.LoadScene ("TitleGame");
 		}
 	}
