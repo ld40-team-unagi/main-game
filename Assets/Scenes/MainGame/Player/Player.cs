@@ -93,10 +93,10 @@ public class Player : MonoBehaviour {
 	}
 
 	void UpdateBag(){
-		GameObject backPack = transform.Find ("BackPack").gameObject;
+		GameObject backPack = transform.FindChild ("BackPack").gameObject;
 		float scale;
 		if (cropYields > 0) {
-			backPackMass = 1f+cropYields * 0.001f;
+			backPackMass = 1f+cropYields * 0.0005f;
 			scale = backPackMass;
 		} else {
 			backPackMass = 1f;
