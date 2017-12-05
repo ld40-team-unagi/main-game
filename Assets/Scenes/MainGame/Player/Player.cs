@@ -110,17 +110,21 @@ public class Player : MonoBehaviour {
 		backPack.transform.localScale = new Vector3 (scale,scale,scale);
 	}
 
-	void OnTriggerStay(Collider c){
+	void OnTriggerEnter(Collider c){
 		GameObject target = c.gameObject;
 		if (target.GetComponent<House> () != null) {
 			inHouse = true;
 		}
 
 		if (target.tag == "Buyer") {
-			if (cropYields == 0)
+			if (cropYields == 0) {
+				target.GetComponent<Buyer> ().RingNoMoney();
 				return;
+			}
+				
 			ScoreCounte.AddScore((uint)cropYields);
 			cropYields = 0;
+			target.GetComponent<Buyer> ().RingMoney();
 			Destroy (target);
 		}
 	}
