@@ -46,39 +46,56 @@ public class Player : MonoBehaviour {
 		head.transform.eulerAngles = new Vector3 (0f, camAngleY*180f/Mathf.PI, 0f);
 		Vector3 headPosition = transform.position + new Vector3 (0f, 1f, 0f);
 		float zoomProxi;
-		if (inHouse) {
-			zoomProxi = 0.9f;
-		}else{
-			if (zoom <= 0f || 0.9f <= zoom) {
-				zoomSpeed = 0f;
-			} else {
-				zoomSpeed *= 0.97f;
-			}
-			zoomSpeed += Input.GetAxis ("Mouse ScrollWheel") * 0.0005f;
+//		if (inHouse) {
+//			zoomProxi = 0.9f;
+//		}else{
+//			if (zoom <= 0f || 0.9f <= zoom) {
+//				zoomSpeed = 0f;
+//			} else {
+//				zoomSpeed *= 0.97f;
+//			}
+//			zoomSpeed += Input.GetAxis ("Mouse ScrollWheel") * 0.0005f;
+//
+//			zoom =+ Mathf.Clamp(zoom - zoomSpeed*80f,0f,0.9f);
+//
+//			zoomProxi = zoom;
+//		}
 
-			zoom =+ Mathf.Clamp(zoom - zoomSpeed*80f,0f,0.9f);
-
-			zoomProxi = zoom;
+		if (zoom <= 0f || 0.9f <= zoom) {
+			zoomSpeed = 0f;
+		} else {
+			zoomSpeed *= 0.97f;
 		}
+		zoomSpeed += Input.GetAxis ("Mouse ScrollWheel") * 0.0005f;
+
+		zoom =+ Mathf.Clamp(zoom - zoomSpeed*80f,0f,0.9f);
+		
+		zoomProxi = zoom;
+
 
 		float zoomX = (1f + zoomProxi*2f) * Mathf.Cos (zoomProxi * Mathf.PI * 0.5f);
 		float zoomY = (1f + zoomProxi*2f) * Mathf.Sin (zoomProxi * Mathf.PI * 0.5f);
-		if (inHouse) {
-			cam.transform.position = headPosition + new Vector3 (
-				-camDistance*0.1f*Mathf.Sin(camAngleY), 
-				camHight*4f, 
-				-camDistance*0.1f*Mathf.Cos(camAngleY)
-			)*zoomProxi;
-			cam.transform.eulerAngles = new Vector3(90f,0f,0f);
-		} else {
-			cam.transform.position = headPosition + new Vector3 (
-				-camDistance*Mathf.Sin(camAngleY)*zoomX, 
-				camHight*zoomY, 
-				-camDistance*Mathf.Cos(camAngleY)*zoomX
-			);
-			
+//		if (inHouse) {
+//			cam.transform.position = headPosition + new Vector3 (
+//				-camDistance*0.1f*Mathf.Sin(camAngleY), 
+//				camHight*4f, 
+//				-camDistance*0.1f*Mathf.Cos(camAngleY)
+//			)*zoomProxi;
+//			cam.transform.eulerAngles = new Vector3(90f,0f,0f);
+//		} else {
+//			cam.transform.position = headPosition + new Vector3 (
+//				-camDistance*Mathf.Sin(camAngleY)*zoomX, 
+//				camHight*zoomY, 
+//				-camDistance*Mathf.Cos(camAngleY)*zoomX
+//			);
+//		}
 
-		}
+		cam.transform.position = headPosition + new Vector3 (
+			-camDistance*Mathf.Sin(camAngleY)*zoomX, 
+			camHight*zoomY, 
+			-camDistance*Mathf.Cos(camAngleY)*zoomX
+		);
+
 		cam.transform.LookAt (headPosition);
 
 		if (Input.GetButtonDown ("Fire1")) {
